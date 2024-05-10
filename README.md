@@ -19,6 +19,11 @@ Bidding webpage for BitCamp's new course(s).
     $ npx prisma generate
     ```
 
+0. Apply prisma migrations for development:
+    ```shell
+    $ npx prisma migrate dev
+    ```
+
 0. Run the server:
     ```shell
     $ npm start
