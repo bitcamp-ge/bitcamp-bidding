@@ -1,3 +1,7 @@
+<h1 align="center">
+    <img src="./public/img/minicamp.webp" width=48 height=48>
+</h1>
+
 # BitCamp bidding
 Bidding webpage for BitCamp's new course(s).
 
@@ -29,6 +33,16 @@ Bidding webpage for BitCamp's new course(s).
     $ npm start
     ```
 
+<h1 align="center">
+    <img src="./public/img/nodejs.png" width=64 height=64>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="./public/img/prisma.png" width=64 height=64>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="./public/img/javascript.png" width=64 height=64>
+</h1>
+
 ## Tech stack
 
 - **Node.js**
@@ -49,3 +63,6 @@ Bidding webpage for BitCamp's new course(s).
 
 - Verify user token;
 - Better design!
+
+<br><br><h5 align="center">✊ სწავლა და ბრძოლა 🔥</h5>
+<!-- Dont mind the decorations :p -->
