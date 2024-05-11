@@ -15,10 +15,25 @@ app.use(express.json())
 app.use(express.static("public"))
 
 // Socket.IO for real-time updates
-io.on("connection", (socket) => {
-    console.log("New client connected")
+io.on("connection", async (socket) => {
+    console.log("[+] New client connected")
+
+    try {
+        // Fetch all existing bids from the database
+        const bids = await prisma.bid.findMany({
+            orderBy: {
+                createdAt: "desc"
+            }
+        })
+
+        // Emit all existing bids to just the connected client
+        socket.emit("load_bids", bids)
+    } catch (error) {
+        console.error("[!] Failed to load bids:", error)
+    }
+
     socket.on("disconnect", () => {
-        console.log("Client disconnected")
+        console.log("[-] Client disconnected")
     })
 })
 
@@ -56,15 +71,20 @@ app.post("/bid", async (req, res) => {
             }
         })
 
+        // Emit the new bid to all clients
+        io.emit("new_bid", newBid)
+
         res.status(201).json(newBid)
     } catch (error) {
         if (error.response) {
             return res.status(401).json({
-                error: "Failed to authenticate with BitCamp API", details: error.response.data
+                error: "Failed to authenticate with BitCamp API",
+                details: error.response.data
             })
         } else if (error.request) {
             return res.status(500).json({
-                error: "No response from BitCamp API", details: error.message
+                error: "No response from BitCamp API",
+                details: error.message
             })
         } else {
             return res.status(500).json({
