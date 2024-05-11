@@ -42,9 +42,10 @@ Bidding webpage for BitCamp's new course(s).
 - Logging into your account, obtaining token;
 - Initial socket connection code for live updates;
 - Working endpoints (`/`, `/login`, `/dashboard`);
+- After login allow the user to submit a bid;
+- Show logged in clients bidding updates on `/dashboard`;
 
 ## Todo: features
 
 - Verify user token;
-- After login allow the user to submit a bid;
-- Show logged in clients bidding updates on `/dashboard`;
+- Better design!
